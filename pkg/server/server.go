@@ -34,7 +34,7 @@ func New(conf *conf.Conf, handler http.Handler, repo *repo.Repo) (*Server, error
 }
 
 func (s *Server) Start() error {
-	if err := s.server.Serve(s.listener); err != nil {
+	if err := s.server.Serve(s.listener); err != nil && err != http.ErrServerClosed {
 		return errors.WithStack(err)
 	}
 	return nil

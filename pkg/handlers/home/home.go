@@ -13,7 +13,7 @@ const (
 )
 
 var (
-	testdata = "helloword"
+	testdata = "helloworld"
 )
 
 type Handler struct {
